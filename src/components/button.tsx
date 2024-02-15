@@ -22,7 +22,7 @@ type ButtonTextProps = {
 };
 
 function ButtonText({ children }: ButtonTextProps) {
-  return <Text className="text-black font-heading text-base mx-2"></Text>;
+  return <Text className="text-black font-heading text-base mx-2">{children}</Text>;
 }
 
 
