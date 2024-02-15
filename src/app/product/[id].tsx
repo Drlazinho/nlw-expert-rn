@@ -3,6 +3,9 @@ import { Image, Text, View } from "react-native";
 
 import { PRODUCTS } from "@/utils/data/products";
 import { formatCurrency } from "@/utils/functions/format-currency";
+import { Button } from "@/components/button";
+import { Feather } from "@expo/vector-icons";
+import { LinkButton } from "@/components/link-button";
 
 export default function Product() {
     const { id } = useLocalSearchParams(); 
@@ -22,6 +25,19 @@ export default function Product() {
                         <Text key={ingredient} className="text-slate-400 font-body text-base leading-6">{"\u2022"} {ingredient}</Text>
                     ))
                 }
+            </View>
+
+            <View className="p-5 pb-8 gap-5">
+                <Button>
+                    <Button.Icon>
+                        <Feather name="plus-circle" size={20}/>
+                    </Button.Icon>
+                    <Button.Text>
+                        Adicionar ao pedido
+                    </Button.Text>
+                </Button>
+
+                <LinkButton title="Voltar ao cardápio" href="/"/>
             </View>
         </View>
     )
